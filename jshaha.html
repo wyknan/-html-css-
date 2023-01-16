@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input id="yes" type="text">
+        <input type="button" value="yes" id="no">
+        <label id="yess" for=""></label>
+        
+    </form>
+    <script>
+        var yes = document.getElementById("yes");
+        var yess = document.getElementById("yess");
+        var no = document.getElementById("no");
+    no.onclick=function(){        
+        if (yes.value/2==1) {
+                yess.innerHTML="是偶数"
+            }else{
+                yess.innerHTML="是鸡数"
+            }            
+        }
+    </script>
+</body>
+</html>

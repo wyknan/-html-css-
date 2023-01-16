@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .header-wrapper{
+            background-color: black;
+            height: 65px;
+            line-height: 65px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5%;
+            position: relative;
+            z-index: 100;
+            
+        }
+        .logo{
+            width: 10%;
+            height: 50%;
+            background: url(./img1/logo-mi2.png) no-repeat;
+            background-size: contain;
+            margin-top: 14px;
+        }
+        .menuicon{
+            width: 10%;
+            height: 50%;
+            background:url(./img1/menu.png) no-repeat;
+            background-size: contain;
+            margin-top: 14px;
+        }
+        .nomenuicon{
+            width: 10%;
+            height: 50%;
+            background:url(./img1/close.png) no-repeat;
+            background-size: contain;
+            margin-top: 14px;
+        }
+        @media screen{
+            @media (max-width:1200px) {
+                .nav{
+                    flex-direction: column;
+                    display: none;
+                    width: 100vw;
+                    position: absolute;
+                    top: 65px;
+                    left: 0;
+                    color: white;
+                    height: 180vw;
+                    z-index: 100;
+                    
+                }
+                .nav li{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    color: #fff;
+                    
+                }
+                
+                .nav li a{
+                    font-size: 5vw;
+                }
+                .login{
+                    display: none;
+                }
+            }
+        } 
+        @media screen{
+            @media (min-width:1201px) {
+                .nav{
+                    display: flex!important;
+                    min-width: 864px;
+                    
+                    justify-content: space-around;
+                }
+                #menuicon{
+                    display: none;
+                }
+                .login{
+                    display: flex;
+                    align-items: center;
+
+                }
+                .login a:hover{
+                    color: #ff6900;
+                }
+                .login span{
+                    margin: 0px 20px;
+                }
+                .nav li a:hover{
+                    color: #ff6900;
+                }
+            }
+        }
+        .icon-r{
+            width: 0.14rem;
+            height: 0.26rem;
+            background: url(./img1/header-right-arrow.png);
+            background-size: 100% 100%;
+        } 
+        .box{
+            position: absolute;
+            top: 65px;
+            left: 0;
+            width: 100%;
+        }
+        .box img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-wrapper">
+        <h1 class="logo"></h1>
+        <div class="menuicon" id="menuicon"></div>
+        <ul class="nav" id="nav">
+            <li><a href="#" style="color:#ff6900 ;"> 小米官网</a><div class="icon-r"></div> </li>
+            <li><a href="#">小米小米商城</a></li>
+            <li><a href="#">小米影相</a></li>
+            <li><a href="#">MIUI</a></li>
+            <li><a href="#">LoT</a></li>
+            <li><a href="#">云服务</a></li>
+            <li><a href="#">天星数科</a></li>
+            <li><a href="#">有品</a></li>
+            <li><a href="#">小爱开放平台</a></li>
+            <li><a href="#">企业团购</a></li>
+        </ul>
+       <div class="login">
+            <div><a href="#">登录</a></div>
+            <span style="color: white;">|</span>
+            <div><a href="#">注册</a></div>
+       </div> 
+       
+    </div>
+    <div class="box">
+        <a href="#">
+            <img src="./img1/d0233245_50cb_43ce_901a_bf39ad9253f2.jpeg" alt="">
+        </a>
+   </div>
+    <script>
+        window.onload=function(){
+            var flag = true
+            var menuicon = document.getElementById("menuicon");
+            var nav =document.getElementById("nav");
+            setInterval(function(){
+                menuicon.onclick = function(){
+                if(flag==true){
+                    menuicon.className="nomenuicon"
+                    nav.style.display="flex"
+                    nav.style.background="black"
+                    flag=false
+                }else{
+                    menuicon.className="menuicon"
+                    flag=true
+                    nav.style.display="none"
+                }
+                console.log(flag);
+            }},2)
+        }
+    </script>
+</body>
+</html>
