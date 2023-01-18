@@ -247,18 +247,19 @@
     left: -85px;
     height: 460px;
 }
-.roll .emg a img{
+.roll #emg a img{
 
     width: 1226px;
     height: 460px;
     z-index: 1;
 
 }
-.roll .emg{
+.roll #emg{
     height: 400px;
 }
-.roll .emg li{
+.roll #emg li{
     position: absolute;
+    opacity: 0;
 }
 .roll-s{
     position: absolute;
@@ -414,4 +415,8 @@
     right: 50%;
     margin-right: -645px;
     top: 500px;
+}
+.all-goods .roll #emg .current{
+    opacity: 1 !important;
+    z-index: 2;
 }
