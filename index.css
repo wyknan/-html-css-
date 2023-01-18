@@ -420,3 +420,7 @@
     opacity: 1 !important;
     z-index: 2;
 }
+#roll #emg{
+    width: 1226px;
+    height: 460px;
+}
