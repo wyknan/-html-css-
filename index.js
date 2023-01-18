@@ -4,29 +4,35 @@ window.onload=function(){
     let rollLeft = roll.children[0]
     let rollRight = roll.children[1]
     const emg = document.getElementById('emg')
-    let timer1
-    let timer2
     let c = 'n'
-    toChange('y')
-    function toChange(c){
-        console.log(c);
-        if (c==='y') {
-            timer1 = setTimeout(function auto() {
-                togo('next')
-                timer2=setTimeout(auto,3000)
-                    },3000);
-        }else if(c==='n') {
-            clearTimeout(timer1)
-            clearTimeout(timer2)
-            timer1 = null
-            console.log();
+    // 闭包
+    function add(c) {
+        let timer1
+        let timer2
+        return function toChange(c){
+            console.log(c);
+            if (c==='y') {
+                timer1 = setTimeout(function auto() {
+                    togo('next')
+                    timer2=setTimeout(auto,3000)
+                        },3000);
+            }else if(c==='n') {
+                clearTimeout(timer1)
+                clearTimeout(timer2)
+                timer1 = null
+                console.log();
+            }
         }
     }
+    var add1 = add(c)
+    // 
+    add1(c)
+    add1('y')
     emg.onmouseenter = function(){
-        toChange('n')
+        add1('n')
     }
     emg.onmouseleave = function(){
-        toChange('y')
+        add1('y')
     }
     function togo(dir) {
         const emg = document.getElementById('emg')
