@@ -264,7 +264,7 @@
 .roll-s{
     position: absolute;
     bottom: 20px;
-    right: -1190px;
+    right: 18px;
     width: 80px;
     z-index: 10;
 }
@@ -279,7 +279,11 @@
     border-color:#757575;
 }
 .roll-s div:hover{
-    background-color: #757575;
+    background-color: #c2c2c2;
+    border-color: hsla(0, 0, 100%, 0.4);
+}
+.-o-{
+    background-color: #c2c2c2;
     border-color: hsla(0, 0, 100%, 0.4);
 }
 .roll-left{

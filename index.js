@@ -30,9 +30,11 @@ window.onload=function(){
     add1('y')
     emg.onmouseenter = function(){
         add1('n')
+        adds('n')
     }
     emg.onmouseleave = function(){
         add1('y')
+        adds('y')
     }
     function togo(dir) {
         const emg = document.getElementById('emg')
@@ -51,5 +53,21 @@ window.onload=function(){
     }
     rollRight.onclick=function(){
         togo('next')
+    }
+    let rollS = document.getElementsByClassName("roll-s")
+    let next
+    let op
+    adds("y")
+    function adds(op){
+        if(op === 'y' ){timer=setTimeout(function autos(){
+        let O = document.querySelector(".-o-")
+        next = O.nextElementSibling ||  rollS[0].getElementsByTagName("div")[0]
+        O.classList.remove('-o-')
+        next.classList.add('-o-')
+        timer=setTimeout(autos, 3000)
+    },3000)}else if(op === 'n'){
+        clearTimeout(timer)
+        timer = null
+    }
     }
 }
